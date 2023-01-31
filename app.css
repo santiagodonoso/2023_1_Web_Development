@@ -513,6 +513,19 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -591,6 +604,10 @@ video {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-3\/12 {
+  width: 25%;
 }
 
 .flex-col {
