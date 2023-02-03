@@ -1,265 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <title>Document</title>
 </head>
-<body class="w-screen h-full overflow-x-hidden overflow-y-scroll bg-black flex text-white">
 
-<!-- left -->
-<div class="fixed w-2/12 lg:w-3/12 h-screen p-4 flex flex-col gap-4 text-lg">
-    <a href="/" class="flex gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="#1DA1F2" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
-          <span class="hidden lg:flex">Twitter</span>
-    </a> 
+<body class="grid grid-cols-[100fr_150fr_100fr] w-full h-full text-gray-400 text-lg bg-black font-light overflow-hidden overflow-y-scroll">
 
-    <a href="" class="flex gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
-          </svg>  
-          <span class="hidden lg:flex">Explore</span>        
-    </a>
+  <!-- left -->
+  <div class="sticky top-0 flex flex-col h-screen px-16 py-4">
 
-    <a href="" class="flex gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg> 
-          <span class="hidden lg:flex">Settings</span>         
-    </a>
+    <div class="flex flex-col gap-6 text-2xl">
+      <div class="">
+        <svg width="32" height="32" viewBox="0 0 24 24" class=""><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
+      </div>
 
-    <a href="" class="flex gap-2 mt-auto mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>          
-          <span class="hidden lg:flex">Maja Sørensen</span>         
-    </a>
-</div>
-<!-- end left -->
+      <a href="/" class="flex items-center gap-2">
+        <svg width="32" height="32" viewBox="0 0 24 24" class=""><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></svg>
+        <span>
+          Home
+        </span>
+      </a>
 
-<!-- middle -->
-<div class="w-10/12 lg:w-5/12 mx-auto border-x border-zinc-600 h-full">
-    <!-- home + buttons -->
-    <div>
-        <p class="font-bold text-2xl p-4">Home</p>
-        <div class="flex justify-around text-center">
-            <a href="" class="w-full hover:bg-zinc-800 p-4"><span class="border-b-4 pb-4 border-sky-400">For you</span></a>
-            <a href="" class="w-full hover:bg-zinc-800 p-4">Following</a>
-        </div>
+      <a href="/explore" class="flex items-center gap-2">
+        <svg width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M224 88h-48.6l8.5-46.6a8 8 0 0 0-15.8-2.8l-9 49.4h-47.7l8.5-46.6a8 8 0 1 0-15.8-2.8l-9 49.4H43.6a8 8 0 1 0 0 16h48.6l-8.7 48H32a8 8 0 0 0 0 16h48.6l-8.5 46.6a8 8 0 0 0 6.5 9.3H80a8 8 0 0 0 7.9-6.6l9-49.4h47.7l-8.5 46.6a8 8 0 0 0 6.5 9.3h1.4a8 8 0 0 0 7.9-6.6l9-49.4h51.5a8 8 0 0 0 0-16h-48.6l8.7-48H224a8 8 0 0 0 0-16Zm-76.5 64H99.8l8.7-48h47.7Z"/></svg>
+        <span>
+          Explore
+        </span>
+      </a>
+
+      <a href="/explore" class="flex items-center gap-2">
+        <svg width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M168 224a8 8 0 0 1-8 8H96a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm52.9-32a15.9 15.9 0 0 1-13.9 8H49a16 16 0 0 1-13.8-24.1c5.9-10.2 13-29.6 13-63.9v-8A79.9 79.9 0 0 1 128 24h.6c43.7.3 79.2 36.6 79.2 80.9v7.1c0 34.3 7.1 53.7 13 63.9a16.2 16.2 0 0 1 .1 16.1Zm-13.9-8c-6.9-12-15.2-34.1-15.2-72v-7.1c0-35.5-28.4-64.7-63.3-64.9h-.5a63.8 63.8 0 0 0-63.8 64v8c0 37.9-8.3 60-15.2 72Z"/></svg>
+        <span>
+          Notifications
+        </span>
+      </a>
+
+      <a href="/messages" class="flex items-center gap-2">
+        <svg width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h13a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1c-.5 0-.94.17-1.28.47l7.78 5.03l7.78-5.03C18.94 6.17 18.5 6 18 6H5m6.5 6.71L3.13 7.28C3.05 7.5 3 7.75 3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8c0-.25-.05-.5-.13-.72l-8.37 5.43Z"/></svg>
+        <span>
+          Messages
+        </span>
+      </a>
+
+      <a href="/messages" class="flex items-center gap-2">
+        <svg width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M184 36H72a12 12 0 0 0-12 12v176a3.9 3.9 0 0 0 2.1 3.5a3.8 3.8 0 0 0 4-.1l61.9-38.7l61.9 38.7a3.9 3.9 0 0 0 2.1.6a4.1 4.1 0 0 0 1.9-.5a3.9 3.9 0 0 0 2.1-3.5V48a12 12 0 0 0-12-12Zm4 180.8l-57.9-36.2a4 4 0 0 0-4.2 0L68 216.8V48a4 4 0 0 1 4-4h112a4 4 0 0 1 4 4Z"/></svg>
+        <span>
+          Bookmarks
+        </span>
+      </a>
+
+      <a href="/messages" class="flex items-center gap-2">
+        <svg width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M230.2 213a118.3 118.3 0 0 0-70.5-54.6a70 70 0 1 0-63.4 0A118.3 118.3 0 0 0 25.8 213a5.9 5.9 0 0 0 2.2 8.2a6 6 0 0 0 8.2-2.2a106 106 0 0 1 183.6 0a6 6 0 0 0 5.2 3a6.4 6.4 0 0 0 3-.8a5.9 5.9 0 0 0 2.2-8.2ZM70 96a58 58 0 1 1 58 58a58 58 0 0 1-58-58Z"/></svg>
+        <span>
+          Profile
+        </span>
+      </a>
+
+      <button class="py-3 text-white bg-sky-500 rounded-full">
+        Tweet
+      </button>
+
     </div>
-    <!-- home + buttons end -->
 
-    <!-- what's happening -->
-    <div class="flex border-t border-zinc-600">
-        <div class="p-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>              
-        </div>
-        <div class="w-full pr-4 py-4">
-            <textarea class="w-full bg-inherit outline-none" placeholder="What's happening?"></textarea>
-            <div class="flex pt-2"> 
-                <div class="gap-2 flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 8.25v7.5m6-7.5h-3V12m0 0v3.75m0-3.75H18M9.75 9.348c-1.03-1.464-2.698-1.464-3.728 0-1.03 1.465-1.03 3.84 0 5.304 1.03 1.464 2.699 1.464 3.728 0V12h-1.5M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                    </svg>                  
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                    </svg>   
-                </div>               
-                <button class="ml-auto bg-sky-400 rounded-full px-6 py-2">Tweet</button>                                                      
-            </div>
-        </div>
+    <div class="flex gap-4 items-center w-full mt-auto">
+      <img src="thumbnails/1.jpg" class="w-12 h-12 rounded-full">
+      <div class="">
+        <div class="">Elon Musk</div>
+        <div class="">@elonmusk</div>
+      </div>
+      <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+          d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+      </svg>        
     </div>
-    <!-- what's happening end -->
 
-    <!-- welcome back -->
-    <div class="px-8 py-4 border-t border-zinc-600">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-          </svg>
-          
-        <h1 class="text-2xl font-bold">Welcome back</h1>
-        <p class="text-zinc-400 pt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eum totam possimus explicabo fuga sequi temporibus mollitia facilis cumque sunt?</p>
-        <button class="bg-white rounded-full my-6 px-6 py-2 font-semibold text-black">Get started</button>    
-    </div>
-    <!-- welcome back end -->
+  </div>
+  <!-- end left -->
+
+
+
+  <!-- center -->
+  <div class="min-h-screen h-full border-x border-gray-800">
 
     <!-- tweet -->
-    <div class="flex w-full border-t border-zinc-600">
-        <!-- left -->
-        <div class="p-4">
-            <img src="images/1.jpg" alt="" class="w-14 rounded-full">
+    <div class="flex gap-4 p-4 border-t border-gray-800">
+      <div class="">
+        <img src="thumbnails/1.jpg" class="w-12 h-12 rounded-full">
+      </div>
+      <!-- right of tweet -->
+      <div class="w-full">
+        <div class="flex">
+          <div class="">
+            <span class="font-bold">Elon Musk</span>
+            <span class="">@elonmusk</span>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
         </div>
-
-        <!-- right -->
-        <div class="w-full pr-4 pt-4">
-            <div class="flex w-full">
-                <div>
-                    You might like... 
-                </div>
-                <div class="font-bold text-sky-400 hover:cursor-pointer">
-                     see more
-                </div>
-                <div class="ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                      </svg>        
-                </div>
-            </div>
-                <!-- user name -->
-                <div class="flex gap-4">
-                    Elon Musk @elonmusk           
-                </div>
-                <!-- tweet text -->
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, molestias!
-                 </div>
-                 <img src="/images/2.jpg" alt="">
-                <!-- icons -->
-                <div class="flex justify-between mt-4 text-zinc-400 max-w-lg">
-                    <div class="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-                        </svg>
-                        <span>15</span>                                              
-                    </div>
-                    <div class="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-                        </svg>
-                        <span>15</span>                                              
-                    </div>
-                    <div class="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-                        </svg>
-                        <span>15</span>                                              
-                    </div>
-                    <div class="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-                        </svg>
-                        <span>15</span>                                              
-                    </div>
-                    <div class="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-                        </svg>
-                        <span>15</span>                                              
-                    </div>
-                </div>
+        <div class="mt-4">
+          Humanity takes up very little of Earth’s surface area – you can fit the entire population of Earth in New York
+          City on one floor
+          <img src="images/1.png" class="w-full mt-4 rounded-lg object-cover">
         </div>
+      </div>
+      <!-- end right of tweet -->
     </div>
-    <!-- tweet end -->
-</div>
-<!-- end middle --> 
+    <!-- end tweet -->
 
-<!-- right -->
-<div class="fixed right-0 w-3/12 hidden lg:flex">
-    <div class=" w-full mr-14 mt-4">
-        <!-- knap -->
-        <div class="rounded-full bg-zinc-600 px-4 py-2 flex">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-zinc-400">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg> 
-            <input type="text" value="" placeholder="Search Twitter" class="text-black outline-none">  
+    <!-- tweet -->
+    <div class="flex gap-4 p-4 border-t border-gray-800">
+      <div class="">
+        <img src="thumbnails/2.jpg" class="w-12 h-12 rounded-full">
+      </div>
+      <!-- right of tweet -->
+      <div class="w-full">
+        <div class="flex">
+          <div class="">
+            <span class="font-bold">Joe Biden</span>
+            <span class="">@joebiden</span>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
         </div>
-
-
-        <div class="bg-zinc-800 w-full mr-14 mt-4 rounded-xl p-6">
-            <h2 class="text-xl font-bold">Trends for you</h2>
-            <!-- felt -->
-            <div class="flex w-full justify-between mt-4">
-                <div class="">
-                    <div class="text-sm text-zinc-600">Lorem ipsum dolor sit amet.</div>
-                    <div class="font-semibold">Lorem, ipsum dolor</div>
-                    <div class="text-sm text-zinc-600">12k Tweets</div>
-                </div>
-                <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-            </div>
-            <!-- felt -->
-            <div class="flex w-full justify-between mt-4">
-                <div class="">
-                    <div class="text-sm text-zinc-600">Lorem ipsum dolor sit amet.</div>
-                    <div class="font-semibold">#Lorem</div>
-                    <div class="text-sm text-zinc-600">123,4k Tweets</div>
-                </div>
-                <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-            </div>
-            <!-- felt -->
-            <div class="flex w-full justify-between mt-4">
-                <div class="">
-                    <div class="text-sm text-zinc-600">Lorem ipsum dolor sit amet.</div>
-                    <div class="font-semibold">Lorem, ipsum dolor</div>
-                    <div class="text-sm text-zinc-600">12k Tweets</div>
-                </div>
-                <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-            </div>
-            <p class="font-semibold text-sky-400 text-sm pt-6">Show more</p>
+        <div class="mt-4">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
         </div>
-
-        <div class="bg-zinc-800 w-full mr-14 mt-4 rounded-xl p-6">
-            <h2 class="text-xl font-bold">Who to follow</h2>
-            <!-- felt -->
-            <div class="flex w-full justify-between mt-4">
-                <div class="">
-                    <div class="text-sm text-zinc-600">Lorem ipsum dolor sit amet.</div>
-                    <div class="font-semibold">Lorem, ipsum dolor</div>
-                </div>
-                <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-            </div>
-            <!-- felt -->
-            <div class="flex w-full justify-between mt-4">
-                <div class="">
-                    <div class="text-sm text-zinc-600">Lorem ipsum dolor sit amet.</div>
-                    <div class="font-semibold">Lorem, ipsum dolor</div>
-                </div>
-                <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-            </div>
-            <!-- felt -->
-            <div class="flex w-full justify-between mt-4">
-                <div class="">
-                    <div class="text-sm text-zinc-600">Lorem ipsum dolor sit amet.</div>
-                    <div class="font-semibold">Lorem, ipsum dolor</div>
-                </div>
-                <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto text-zinc-400 hover:text-sky-400 hover:cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-            </div>
-            <p class="font-semibold text-sky-400 text-sm pt-6">Show more</p>
-        </div>
+      </div>
+      <!-- end right of tweet -->
     </div>
-</div>
-<!-- end right -->
+    <!-- end tweet -->
+
+
+    <!-- tweet -->
+    <div class="flex gap-4 p-4 border-t border-gray-800">
+      <div class="">
+        <img src="thumbnails/3.jpg" class="w-12 h-12 rounded-full">
+      </div>
+      <!-- right of tweet -->
+      <div class="w-full">
+        <div class="flex">
+          <div class="">
+            <span class="font-bold">Shakira</span>
+            <span class="">@shakira</span>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <div class="mt-4">
+          But also the leap into electronic.
+          <img src="images/3.jpg" class="w-full mt-4 rounded-lg object-cover">
+        </div>
+      </div>
+      <!-- end right of tweet -->
+    </div>
+    <!-- end tweet -->
+
+
+
+    <!-- tweet -->
+    <div class="flex gap-4 p-4 border-t border-gray-800">
+      <div class="">
+        <img src="thumbnails/3.jpg" class="w-12 h-12 rounded-full">
+      </div>
+      <!-- right of tweet -->
+      <div class="w-full">
+        <div class="flex">
+          <div class="">
+            <span class="font-bold">Shakira</span>
+            <span class="">@shakira</span>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <div class="mt-4">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
+        </div>
+      </div>
+      <!-- end right of tweet -->
+    </div>
+    <!-- end tweet -->
+
+
+
+
+    <!-- tweet -->
+    <div class="flex gap-4 p-4 border-t border-gray-800">
+      <div class="">
+        <img src="thumbnails/3.jpg" class="w-12 h-12 rounded-full">
+      </div>
+      <!-- right of tweet -->
+      <div class="w-full">
+        <div class="flex">
+          <div class="">
+            <span class="font-bold">Shakira</span>
+            <span class="">@shakira</span>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <div class="mt-4">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
+        </div>
+      </div>
+      <!-- end right of tweet -->
+    </div>
+    <!-- end tweet -->
+
+
+  </div>
+  <!-- end center -->
+
+
+
+  <!-- right -->
+  <div class="w-full px-8 pb-8">
+
+    <!-- search -->
+    <div class="sticky top-0 w-full py-4 bg-black">
+      <form class="">
+        <svg width="32" height="32" viewBox="0 0 24 24" class="absolute top-6 left-2 text-gray-400">
+          <path fill="currentColor"
+            d="m18.9 20.3l-5.6-5.6q-.75.6-1.725.95Q10.6 16 9.5 16q-2.725 0-4.612-1.887Q3 12.225 3 9.5q0-2.725 1.888-4.613Q6.775 3 9.5 3t4.613 1.887Q16 6.775 16 9.5q0 1.1-.35 2.075q-.35.975-.95 1.725l5.625 5.625q.275.275.275.675t-.3.7q-.275.275-.7.275q-.425 0-.7-.275ZM9.5 14q1.875 0 3.188-1.312Q14 11.375 14 9.5q0-1.875-1.312-3.188Q11.375 5 9.5 5Q7.625 5 6.312 6.312Q5 7.625 5 9.5q0 1.875 1.312 3.188Q7.625 14 9.5 14Z" />
+        </svg>
+        <input type="text" placeholder="Search Twitter" class="w-full h-12 pl-12 bg-gray-700 rounded-full">
+      </form>
+    </div>
+    <!-- end search -->
+
+    <!-- trending -->
+    <div class="flex flex-col gap-4 w-full p-2 bg-gray-700 rounded-lg">
+      <div class="text-2xl font-bold">
+        Trends for you
+      </div>
+      <!-- trend -->
+      <div class="">
+        <div class="flex">
+          <div class="text-white">Trending in Denmark</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <div class="">
+          28.6K Tweets
+        </div>
+      </div>
+      <!-- end trend -->
+      <!-- trend -->
+      <div class="">
+        <div class="flex">
+          <div class="text-white">Brexit - Politics</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <div class="">
+          28.6K Tweets
+        </div>
+      </div>
+      <!-- end trend -->
+      <!-- trend -->
+      <div class="">
+        <div class="flex">
+          <div class="text-white">Tesla Stock</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" class="ml-auto text-gray-500">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M6.75 12a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm6 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Z" />
+          </svg>
+        </div>
+        <div class="">
+          28.6K Tweets
+        </div>
+      </div>
+      <!-- end trend -->
+
+      <a href="" class="text-sky-500">
+        Show more
+      </a>
+
+    </div>
+    <!-- end trending -->
+
+    <!-- who to follow -->
+    <div class="sticky top-20 flex flex-col gap-4 w-full p-2 mt-4 bg-gray-700 rounded-lg">
+      <div class="text-2xl font-bold">
+        Who to follow
+      </div>
+
+      <!-- person -->
+      <div class="flex items-center gap-4">
+        <img src="thumbnails/1.jpg" class="w-12 h-12 rounded-full">
+        <div class="">
+          <div class="text-gray-200 font-bold">
+            Elon Musk
+          </div>
+          <div class="">
+            @elonmusk
+          </div>
+        </div>
+        <button class="ml-auto px-4 py-2 text-black text-base font-medium bg-gray-200 rounded-full">
+          Follow
+        </button>
+      </div>
+      <!-- end person -->
+
+      <!-- person -->
+      <div class="flex items-center gap-4">
+        <img src="thumbnails/2.jpg" class="w-12 h-12 rounded-full">
+        <div class="">
+          <div class="text-gray-200 font-bold">
+            Joe Biden
+          </div>
+          <div class="">
+            @joebiden
+          </div>
+        </div>
+        <button class="ml-auto px-4 py-2 text-black text-base font-medium bg-gray-200 rounded-full">
+          Follow
+        </button>
+      </div>
+      <!-- end person -->
+
+      <!-- person -->
+      <div class="flex items-center gap-4">
+        <img src="thumbnails/3.jpg" class="w-12 h-12 rounded-full">
+        <div class="">
+          <div class="text-gray-200 font-bold">
+            Shakira
+          </div>
+          <div class="">
+            @shakira
+          </div>
+        </div>
+        <button class="ml-auto px-4 py-2 text-black text-base font-medium bg-gray-200 rounded-full">
+          Follow
+        </button>
+      </div>
+      <!-- end person -->
+
+
+      <!-- person -->
+      <div class="flex items-center gap-4">
+        <img src="thumbnails/1.jpg" class="w-12 h-12 rounded-full">
+        <div class="">
+          <div class="text-gray-200 font-bold">
+            Elon Musk
+          </div>
+          <div class="">
+            @elonmusk
+          </div>
+        </div>
+        <button class="ml-auto px-4 py-2 text-black text-base font-medium bg-gray-200 rounded-full">
+          Follow
+        </button>
+      </div>
+      <!-- end person -->
+
+      <!-- person -->
+      <div class="flex items-center gap-4">
+        <img src="thumbnails/2.jpg" class="w-12 h-12 rounded-full">
+        <div class="">
+          <div class="text-gray-200 font-bold">
+            Joe Biden
+          </div>
+          <div class="">
+            @joebiden
+          </div>
+        </div>
+        <button class="ml-auto px-4 py-2 text-black text-base font-medium bg-gray-200 rounded-full">
+          Follow
+        </button>
+      </div>
+      <!-- end person -->
+
+
+
+      <a href="" class="text-sky-500">
+        Show more
+      </a>
+
+    </div>
+    <!-- end who to follow  -->
+
+
+  </div>
+  <!-- end right -->
 
 </body>
+
 </html>
