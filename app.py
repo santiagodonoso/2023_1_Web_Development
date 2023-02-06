@@ -1,9 +1,14 @@
-from bottle import get, run
+from bottle import get, run, template, static_file
+
+##############################
+@get("/app.css")
+def _():
+  return static_file("app.css", root=".")
 
 ##############################
 @get("/")
 def render_index():
-  return "hix"
+  return template("index")
 
 ##############################
 # syn. localhost
