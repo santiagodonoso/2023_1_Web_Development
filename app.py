@@ -3,7 +3,12 @@ from bottle import get, run, template, static_file
 # This data will come from the database
 # For now, we just hard codedthe data
 tweets = [
-  {"image_name":"1.jpg", "fullname":"Santiago Donoso", "usernmae":"elonmusk"}
+  { "image_name":"1.jpg", 
+    "fullname":"Santiago Donoso", 
+    "username":"santiagodonoso",
+    "message":"My first tweet",
+    "message_image":"1.png"
+  }
 ]
 
 
