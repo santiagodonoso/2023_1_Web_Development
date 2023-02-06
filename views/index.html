@@ -91,7 +91,8 @@
 
   <!-- center -->
   <div class="min-h-screen h-full border-x border-gray-600">
-
+    
+    % for tweet in tweets:
     <!-- tweet -->
     <div class="flex gap-4 p-4 border-t border-gray-600">
       <div class="">
@@ -102,7 +103,7 @@
         <div class="flex">
           <div class="flex">
             <span class="flex items-center gap-2 font-bold">
-              Elon Musk
+              {{tweet["fullname"]}}
               <svg width="20" height="20" viewBox="0 0 24 24" class="text-sky-500"><path fill="currentColor" d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45Zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12Z"/></svg>
             </span>
             <span class="ml-4">@elonmusk</span>
@@ -141,7 +142,9 @@
       <!-- end right of tweet -->
     </div>
     <!-- end tweet -->
+    % end
 
+    
     <!-- tweet -->
     <div class="flex gap-4 p-4 border-t border-gray-600">
       <div class="">
@@ -173,7 +176,6 @@
     </div>
     <!-- end tweet -->
 
-
     <!-- tweet -->
     <div class="flex gap-4 p-4 border-t border-gray-600">
       <div class="">
@@ -199,8 +201,6 @@
       <!-- end right of tweet -->
     </div>
     <!-- end tweet -->
-
-
 
     <!-- tweet -->
     <div class="flex gap-4 p-4 border-t border-gray-600">
@@ -231,9 +231,6 @@
       <!-- end right of tweet -->
     </div>
     <!-- end tweet -->
-
-
-
 
     <!-- tweet -->
     <div class="flex gap-4 p-4 border-t border-gray-600">

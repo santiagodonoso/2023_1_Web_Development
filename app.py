@@ -1,5 +1,36 @@
 from bottle import get, run, template, static_file
 
+# This data will come from the database
+# For now, we just hard codedthe data
+tweets = [
+  {"image_name":"1.jpg", "fullname":"Santiago Donoso", "usernmae":"elonmusk"}
+]
+
+
+
+
+
+
+##############################
+@get("/images/<filename:re:.*\.png>")
+def _(filename):
+  return static_file(filename, root="./images")
+
+##############################
+@get("/images/<filename:re:.*\.jpg>")
+def _(filename):
+  return static_file(filename, root="./images")
+
+##############################
+@get("/images/<filename:re:.*\.jpeg>")
+def _(filename):
+  return static_file(filename, root="./images")
+
+##############################
+@get("/images/<filename:re:.*\.png>")
+def _(filename):
+  return static_file(filename, root="./images")
+
 ##############################
 @get("/thumbnails/<filename:re:.*\.png>")
 def _(filename):
@@ -18,7 +49,7 @@ def _():
 ##############################
 @get("/")
 def render_index():
-  return template("index", title="Twitter")
+  return template("index", title="Twitter", tweets=tweets)
 
 ##############################
 # syn. localhost
