@@ -118,7 +118,10 @@
         </div>
         <div class="mt-4">
           {{tweet["message"]}}
+
+          % if tweet.get("message_image"): 
           <img src="images/{{tweet['message_image']}}" class="w-full mt-4 max-h-96 rounded-lg object-contain">
+          % end
         </div>
         <div class="flex justify-between mt-2">
           <div class="flex gap-2 items-center">
