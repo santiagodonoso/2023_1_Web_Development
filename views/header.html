@@ -15,6 +15,6 @@
 </head>
 <body>
   <nav>
-    <a href="/about">About us</a>
-    <a href="/contact" class="active">Contact us</a>
+    <a href="/about" {{!get('about_active', '')}}>About us</a>
+    <a href="/contact" {{!get('contact_active', '')}}>Contact us</a>
   </nav>

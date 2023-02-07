@@ -74,7 +74,7 @@ def _():
 ##############################
 @get("/contact")
 def _():
-  return template("contact-us", title="Contact us")  
+  return template("contact-us")  
 
 ##############################
 # syn. localhost
