@@ -1,4 +1,4 @@
-from bottle import get, run, template, static_file, response
+from bottle import get, run, template, static_file, response, request
 
 # This data will come from the database
 # For now, we just hard coded the data
@@ -83,17 +83,19 @@ def _():
 @get("/api-get-name")
 def _():
   try: # Best case scenario
+    # raise Exception()
     # Connect/Open to the database
     # Get name from the database
     name = "Santiago"
     # Send the name to the client
-    return {"name": name}
+    return {"id":7877878, "name": name}
   except: # Something went wrong
     # Send a 400 to the client
-    pass
+    response.status = 400
+    return
   finally: # It must be done 
     # Close the database
-    pass
+    print("I am here")
   
 
 ##############################
