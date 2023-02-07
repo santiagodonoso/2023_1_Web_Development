@@ -1,4 +1,5 @@
 from bottle import get, run, template, static_file, response, request
+import sqlite3
 
 # This data will come from the database
 # For now, we just hard coded the data
@@ -83,19 +84,33 @@ def _():
 @get("/api-get-name")
 def _():
   try: # Best case scenario
-    # raise Exception()
-    # Connect/Open to the database
-    # Get name from the database
+
     id = request.query.get("id")
     name = request.query.get("name")
+    lastname = request.query.get("lastname")
+
+    if id != "1": raise Exception("the id is wrong")
+    if name != "a": raise Exception("the name is wrong")
+    if lastname != "b": raise Exception("the lastname is wrong")
+
+    # Connect/Open to the database
+    db = sqlite3.connect("twitter.db")
+    users = db.execute("SELECT * FROM users").fetchall()
+    print(users) # this is for the terminal
+    # Get name from the database
+
+
     # Send the name to the client
-    return {"id":id, "name": name}
-  except: # Something went wrong
+    # return users
+    return {"id":id, "name": name, "lastname":lastname}
+  except Exception as ex: # Something went wrong
+    print(dir(ex))
     # Send a 400 to the client
     response.status = 400
-    return
+    return {"error": str(ex)}
   finally: # It must be done 
     # Close the database
+    if "db" in locals(): db.close()
     print("I am here")
   
 
