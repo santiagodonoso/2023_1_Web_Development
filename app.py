@@ -87,7 +87,7 @@ def _():
     # Connect/Open to the database
     # Get name from the database
     id = request.query.get("id")
-    name = "Santiago"
+    name = request.query.get("name")
     # Send the name to the client
     return {"id":id, "name": name}
   except: # Something went wrong
