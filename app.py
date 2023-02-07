@@ -15,7 +15,13 @@ tweets = [
 # list = array
 # dictionary is {}. Think of it as JSON
 trends = [
-  {"title":"One", "total_hash":1}
+  {"title":"One", "total_hash":1},
+  {"title":"Two", "total_hash":2},
+  {"title":"Three", "total_hash":3},
+  {"title":"Four", "total_hash":4},
+  {"title":"Five", "total_hash":5},
+  {"title":"Six", "total_hash":6},
+  {"title":"Seven", "total_hash":7},
 ]
 
 
@@ -61,5 +67,10 @@ def render_index():
   trends=trends)
 
 ##############################
+@get("/about")
+def _():
+  return template("about-us")  
+
+##############################
 # syn. localhost
-run(host="127.0.0.1", port=3000, reloader=True, debug=True) # 65535
+run(host="127.0.0.1", port=3000, reloader=True, debug=True, server="paste") # 65535
