@@ -1,7 +1,7 @@
 from bottle import get, run, template, static_file
 
 # This data will come from the database
-# For now, we just hard codedthe data
+# For now, we just hard coded the data
 # 0 False 1 True
 tweets = [
   { "verified":1, "image_name":"1.jpg", "fullname":"Santiago Donoso", "username":"santiagodonoso","message":"My first tweet", "total_messages":"1","total_retweets":"2","total_likes":"3","total_dislikes":"4",},
@@ -12,9 +12,11 @@ tweets = [
   { "verified":0, "image_name":"1.jpg", "fullname":"Santiago Donoso", "username":"santiagodonoso","message":"My first tweet","message_image":"1.png","total_messages":"1","total_retweets":"2","total_likes":"3","total_dislikes":"4",},
 ]
 
-
-
-
+# list = array
+# dictionary is {}. Think of it as JSON
+trends = [
+  {"title":"One", "total_hash":1}
+]
 
 
 ##############################
@@ -55,7 +57,8 @@ def _():
 ##############################
 @get("/")
 def render_index():
-  return template("index", title="Twitter", tweets=tweets)
+  return template("index", title="Twitter", tweets=tweets,
+  trends=trends)
 
 ##############################
 # syn. localhost
