@@ -72,5 +72,10 @@ def _():
   return template("about-us")  
 
 ##############################
+@get("/contact")
+def _():
+  return template("contact-us", title="Contact us")  
+
+##############################
 # syn. localhost
 run(host="127.0.0.1", port=3000, reloader=True, debug=True, server="paste") # 65535
