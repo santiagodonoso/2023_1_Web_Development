@@ -1,4 +1,4 @@
-from bottle import get, run, template, static_file
+from bottle import get, run, template, static_file, response
 
 # This data will come from the database
 # For now, we just hard coded the data
@@ -75,6 +75,26 @@ def _():
 @get("/contact")
 def _():
   return template("contact-us")  
+
+##############################
+# APIs do not return HTML... there are exceptions
+# API returns most likely JSON
+# Rule 1 - To test the API you use thunderclient or Postman
+@get("/api-get-name")
+def _():
+  try: # Best case scenario
+    # Connect/Open to the database
+    # Get name from the database
+    name = "Santiago"
+    # Send the name to the client
+    return {"name": name}
+  except: # Something went wrong
+    # Send a 400 to the client
+    pass
+  finally: # It must be done 
+    # Close the database
+    pass
+  
 
 ##############################
 # syn. localhost
