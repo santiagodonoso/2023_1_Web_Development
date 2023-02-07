@@ -4,16 +4,16 @@
     "colId": "a2608687-c927-453f-9b0e-7c04116255fc",
     "containerId": "",
     "name": "api get name",
-    "url": "127.0.0.1:3000/api-get-name?id=1",
+    "url": "127.0.0.1:3000/api-get-name?id=10",
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-02-07T11:21:38.072Z",
-    "modified": "2023-02-07T11:47:57.152Z",
+    "modified": "2023-02-07T11:52:33.327Z",
     "headers": [],
     "params": [
       {
         "name": "id",
-        "value": "1",
+        "value": "10",
         "isPath": false
       }
     ],

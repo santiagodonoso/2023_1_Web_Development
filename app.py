@@ -86,9 +86,10 @@ def _():
     # raise Exception()
     # Connect/Open to the database
     # Get name from the database
+    id = request.query.get("id")
     name = "Santiago"
     # Send the name to the client
-    return {"id":7877878, "name": name}
+    return {"id":id, "name": name}
   except: # Something went wrong
     # Send a 400 to the client
     response.status = 400
