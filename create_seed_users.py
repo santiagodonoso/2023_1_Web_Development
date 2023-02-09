@@ -13,7 +13,7 @@ db.executescript(
   CREATE TABLE users(
     id            TEXT,
     name          TEXT,
-    email         TEXT,
+    email         TEXT UNIQUE,
     PRIMARY KEY(id)
   ) WITHOUT ROWID;
   COMMIT;
@@ -23,8 +23,9 @@ db.executescript(
 for x in range(5):
   id = str(uuid.uuid4()) # uuid is type uuid convert it into text
   name = fake.unique.first_name()
+  email = name.lower() + "@" + fake.free_email_domain()
   print(name)
-  db.execute(f"INSERT INTO users(id,name,email) VALUES('{id}','{name}','aa')")
+  db.execute(f"INSERT INTO users(id,name,email) VALUES('{id}','{name}','{email}')")
   db.commit()
 
 
