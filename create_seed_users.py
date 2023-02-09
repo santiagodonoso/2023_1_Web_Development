@@ -19,7 +19,7 @@ db.executescript(
 
 for x in range(5):
   id = str(uuid.uuid4()) # uuid is type uuid convert it into text
-  db.execute("INSERT INTO users(id,name,email) VALUES('1','a','aa')")
+  db.execute(f"INSERT INTO users(id,name,email) VALUES('{id}','a','aa')")
   db.commit()
 
 
