@@ -23,7 +23,7 @@ db.executescript(
 
 for x in range(100000):
   id = str(uuid.uuid4()) # uuid is type uuid convert it into text
-  name = fake.unique.first_name()
+  name = fake.first_name()
   email = name.lower() + id.replace("-", "") + "@" + fake.free_email_domain()
   db.execute(f"INSERT INTO users(id,name,email) VALUES('{id}','{name}','{email}')")
   db.commit()
