@@ -99,7 +99,6 @@ def _():
     print(users) # this is for the terminal
     # Get name from the database
 
-
     # Send the name to the client
     # return users
     return {"id":id, "name": name, "lastname":lastname}
