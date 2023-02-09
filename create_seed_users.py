@@ -16,8 +16,12 @@ db.executescript(
   """
 )
 
-db.execute("INSERT INTO users(id,name,email) VALUES('1','a','aa')")
-db.commit()
+for x in range(5):
+  print("x")
+
+
+# db.execute("INSERT INTO users(id,name,email) VALUES('1','a','aa')")
+# db.commit()
 
 
 
