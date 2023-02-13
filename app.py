@@ -1,9 +1,15 @@
-from bottle import default_app, run
+from bottle import default_app, get, run
+
+##############################
+@get("/")
+def _():
+  return "Works"
 
 ##############################
 # Run in AWS
 try:
   import production
+  print("Server running on AWS")
   application = default_app()
 # Run in local computer
 except Exception as ex:
