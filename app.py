@@ -1,28 +1,4 @@
-from bottle import default_app, get, run
-
-##############################
-@get("/")
-def _():
-  return "Works"
-
-##############################
-# Run in AWS
-try:
-  import production
-  print("Server running on AWS")
-  application = default_app()
-# Run in local computer
-except Exception as ex:
-  print("Server running locally")
-  run(host="127.0.0.1", port=80, debug=True, reloader=True)
-
-
-
-
-
-
-"""
-from bottle import get, template, run, view
+from bottle import default_app, get, template, run, view
 import sqlite3
 
 ##############################
@@ -40,7 +16,7 @@ def _():
 # @view("profile")
 def _(username):
   try:
-    db = sqlite3.connect("twitter.db")
+    db = sqlite3.connect("/home/fulldemo/mysite/twitter.db")
     db.row_factory = dict_factory
     user = db.execute("SELECT * FROM users WHERE username=? COLLATE NOCASE",(username,)).fetchall()[0]
     # Get the user's id
@@ -64,5 +40,14 @@ def _(username):
 
 
 ##############################
-run(host="127.0.0.1", port=80, debug=True, reloader=True)
-"""
+##############################
+# Run in AWS
+try:
+  import production
+  print("Server running on AWS")
+  application = default_app()
+# Run in local computer
+except Exception as ex:
+  print("Server running locally")
+  run(host="127.0.0.1", port=80, debug=True, reloader=True)
+
