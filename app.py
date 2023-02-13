@@ -18,6 +18,8 @@ def _(username):
   try:
     db = sqlite3.connect("twitter.db")
     db.row_factory = dict_factory
+    user = db.execute("SELECT * FROM users WHERE username=?",("elonmusk",)).fetchall()
+    print(user)
     return template("profile", username=username)
   except:
     return "error"
