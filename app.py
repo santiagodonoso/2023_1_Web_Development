@@ -7,13 +7,6 @@ def dict_factory(cursor, row):
   return {key: value for key, value in zip(col_names, row)}
 
 ##############################
-
-def db():
-  db = sqlite3.connect("twitter.db")
-  db.row_factory = dict_factory
-  return db
-
-##############################
 @get("/")
 def _():
   return "Home page"
@@ -24,6 +17,7 @@ def _():
 def _(username):
   try:
     db = sqlite3.connect("twitter.db")
+    db.row_factory = dict_factory
     return template("profile", username=username)
   except:
     return "error"
