@@ -18,10 +18,11 @@ def _(username):
   try:
     db = sqlite3.connect("twitter.db")
     db.row_factory = dict_factory
-    user = db.execute("SELECT * FROM users WHERE username=?",("elonmusk",)).fetchall()
-    print(user)
-    return template("profile", username=username)
-  except:
+    user = db.execute("SELECT * FROM users WHERE username=?",(username,)).fetchall()[0]
+    print(user) # {'id': '51602a9f7d82472b90ed1091248f6cb1', 'username': 'elonmusk', 'name': 'Elon', 'last_name': 'Musk', 'total_followers': '128900000', 'total_following': '177', 'total_tweets': '22700', 'avatar': '51602a9f7d82472b90ed1091248f6cb1.jpg'}
+    return template("profile", user=user)
+  except Exception as ex:
+    print(ex)
     return "error"
   finally:
     if "db" in locals(): db.close()
