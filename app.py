@@ -1,3 +1,21 @@
+from bottle import default_app, run
+
+##############################
+# Run in AWS
+try:
+  import production
+  application = default_app()
+# Run in local computer
+except Exception as ex:
+  print("Server running locally")
+  run(host="127.0.0.1", port=80, debug=True, reloader=True)
+
+
+
+
+
+
+"""
 from bottle import get, template, run, view
 import sqlite3
 
@@ -41,4 +59,4 @@ def _(username):
 
 ##############################
 run(host="127.0.0.1", port=80, debug=True, reloader=True)
-
+"""
