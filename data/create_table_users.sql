@@ -11,5 +11,7 @@ CREATE TABLE users(
   PRIMARY KEY(id)
   ) WITHOUT ROWID;
 
+INSERT INTO users VALUES("1","elonmusk","Elon", "Musk", "128900000", "177", "22700");
+
 
 
