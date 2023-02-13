@@ -13,3 +13,17 @@ CREATE TABLE tweets(
   total_replies   TEXT,
   PRIMARY KEY(id)
 ) WITHOUT ROWID;
+
+INSERT INTO tweets VALUES(
+  "75544dcd995745ba83557143458a672c", 
+  "51602a9f7d82472b90ed1091248f6cb1",
+  "1676283561",
+  "My first tweet",
+  "",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0"
+  );
+
