@@ -1,10 +1,10 @@
-from bottle import get, run, view
+from bottle import get, template, run, view
 
 ##############################
 @get("/<username>")
-@view("profile")
+# @view("profile")
 def _(username):
-  return 
+  return template("profile")
 
 ##############################
 run(host="127.0.0.1", port=80, debug=True, reloader=True)
