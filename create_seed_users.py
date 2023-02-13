@@ -26,7 +26,8 @@ for x in range(100000):
   name = fake.first_name()
   email = name.lower() + id.replace("-", "") + "@" + fake.free_email_domain()
   db.execute(f"INSERT INTO users(id,name,email) VALUES('{id}','{name}','{email}')")
-  db.commit()
+  
+db.commit()
 
 
 
