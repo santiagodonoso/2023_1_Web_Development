@@ -34,8 +34,8 @@ SELECT * FROM orders;
 SELECT * FROM users 
 JOIN orders
 JOIN products
-ON users.user_id = orders.order_user_fk
-AND products.product_id = orders.order_product_fk
-WHERE users.user_id = "2";
+ON user_id = order_user_fk
+AND product_id = order_product_fk
+WHERE user_id = "2";
 
 
