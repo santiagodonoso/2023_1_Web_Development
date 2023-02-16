@@ -58,5 +58,13 @@ CREATE TABLE customers(
 INSERT INTO customers VALUES("1", "A", 0);
 SELECT * FROM customers;
 
+DROP TABLE IF EXISTS tweets;
+CREATE TABLE tweets(
+  tweet_id            TEXT,
+  tweet_message       TEXT,
+  tweet_customer_fk   TEXT,
+  PRIMARY KEY(tweet_id)
+) WITHOUT ROWID;
+
 
 
