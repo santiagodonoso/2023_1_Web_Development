@@ -19,5 +19,13 @@ INSERT INTO products VALUES("1", "Product A", "10");
 INSERT INTO products VALUES("2", "Product B", "20");
 SELECT * FROM products;
 
-
-
+DROP TABLE IF EXISTS orders;
+CREATE TABLE orders(
+  id            TEXT,
+  user_fk       TEXT,
+  product_fk    TEXT,
+  PRIMARY KEY(id)
+) WITHOUT ROWID;
+INSERT INTO orders VALUES("1", "1", "1");
+INSERT INTO orders VALUES("2", "1", "2");
+SELECT * FROM orders;
