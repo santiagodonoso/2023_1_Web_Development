@@ -29,3 +29,12 @@ CREATE TABLE orders(
 INSERT INTO orders VALUES("1", "1", "1");
 INSERT INTO orders VALUES("2", "1", "2");
 SELECT * FROM orders;
+
+SELECT * FROM users 
+JOIN orders
+JOIN products
+ON users.id = orders.user_fk
+AND products.id = orders.product_fk
+WHERE users.id = "1";
+
+
