@@ -60,11 +60,28 @@ SELECT * FROM customers;
 
 DROP TABLE IF EXISTS tweets;
 CREATE TABLE tweets(
-  tweet_id            TEXT,
-  tweet_message       TEXT,
-  tweet_customer_fk   TEXT,
+  tweet_id            TEXT,             
+  tweet_message       TEXT,       
+  tweet_customer_fk   TEXT,       
   PRIMARY KEY(tweet_id)
 ) WITHOUT ROWID;
+
+
+-- Trigger 
+-- INSERT UPDATE DELETE
+-- Time events, when it should happen BEFORE AFTER
+
+CREATE TRIGGER increment_total_tweets AFTER INSERT ON tweets
+BEGIN
+  UPDATE customers
+  SET customer_total_tweets = customer_total_tweets + 1
+  WHERE customer_id = NEW.tweet_customer_fk
+END;
+
+
+
+
+
 
 
 
