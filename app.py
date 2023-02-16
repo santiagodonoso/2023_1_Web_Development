@@ -1,5 +1,16 @@
 from bottle import default_app, get, template, run, view
+import os
 import sqlite3
+import pathlib
+print("#"*30)
+print("directory of the script being run")
+print(pathlib.Path(__file__).parent.resolve()) # /home/USERNAME/mysite
+
+
+
+
+
+
 
 ##############################
 def dict_factory(cursor, row):
@@ -16,7 +27,7 @@ def _():
 # @view("profile")
 def _(username):
   try:
-    db = sqlite3.connect("/home/fulldemo/mysite/twitter.db")
+    db = sqlite3.connect(str(pathlib.Path(__file__).parent.resolve())+"/twitter.db")
     db.row_factory = dict_factory
     user = db.execute("SELECT * FROM users WHERE username=? COLLATE NOCASE",(username,)).fetchall()[0]
     # Get the user's id
