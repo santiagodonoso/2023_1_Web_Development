@@ -66,7 +66,7 @@ CREATE TABLE tweets(
   PRIMARY KEY(tweet_id)
 ) WITHOUT ROWID;
 
-INSERT INTO tweets VALUES("3", "Hi", "1");
+INSERT INTO tweets VALUES("10", "Hi", "1");
 SELECT * FROM tweets;
 
 
@@ -81,11 +81,5 @@ BEGIN
   SET customer_total_tweets = customer_total_tweets + "1"
   WHERE customer_id = NEW.tweet_customer_fk;
 END;
-
-
-
-
-
-
 
 
