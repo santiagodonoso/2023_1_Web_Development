@@ -36,7 +36,27 @@ JOIN orders
 JOIN products
 ON user_id = order_user_fk
 AND product_id = order_product_fk
-WHERE user_id = "2";
+WHERE user_id = "1" 
+AND product_price < "15";
+
+-- Expand it.. only products which the price is less
+
+
+SELECT * FROM products WHERE product_name LIKE "%uct%";
+
+
+
+
+
+DROP TABLE IF EXISTS customers;
+CREATE TABLE customers(
+  customer_id           TEXT,
+  customer_first_name   TEXT,
+  customer_total_tweets TEXT,
+  PRIMARY KEY(customer_id)
+) WITHOUT ROWID;
+INSERT INTO customers VALUES("1", "A", 0);
+SELECT * FROM customers;
 
 
 
