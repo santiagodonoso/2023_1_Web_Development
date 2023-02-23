@@ -61,5 +61,15 @@ INSERT INTO trends VALUES("c9773e2bb68647039a7a40c2ee7d4716", "Zara", "4458796")
 SELECT * FROM tweets JOIN users ON tweet_user_fk = user_id ORDER BY RANDOM() LIMIT 5;
 
 CREATE VIEW users_by_name AS SELECT * FROM users ORDER BY user_name DESC;
-<
+
 SELECT * FROM users_by_name LIMIT 1;
+
+-- JOIN and test it for all users and tweets
+-- Create the view that contains the join command
+-- The name of the view is: users_and_tweets
+SELECT * FROM users JOIN tweets ON user_id = tweet_user_fk;
+
+CREATE VIEW users_and_tweets AS 
+SELECT * FROM users JOIN tweets ON user_id = tweet_user_fk;
+
+SELECT * FROM users_and_tweets;
