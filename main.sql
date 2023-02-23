@@ -1,18 +1,18 @@
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(
-  user_id                     TEXT,
-  user_name                   TEXT,
-  user_first_name             TEXT,
-  user_last_name              TEXT,
-  user_avatar                 TEXT,
-  user_created_at             TEXT,
-  user_total_tweets           TEXT,
-  user_total_retweets         TEXT,
-  user_total_comments         TEXT,
-  user_total_likes            TEXT,
-  user_total_dislikes         TEXT,
-  user_total_followers        TEXT,
-  user_total_following        TEXT,
+  user_id                     TEXT UNIQUE NOT NULL,
+  user_name                   TEXT UNIQUE NOT NULL,
+  user_first_name             TEXT NOT NULL,
+  user_last_name              TEXT DEFAULT "",
+  user_avatar                 TEXT UNIQUE, 
+  user_created_at             TEXT NOT NULL,
+  user_total_tweets           TEXT DEFAULT 0,
+  user_total_retweets         TEXT DEFAULT 0,
+  user_total_comments         TEXT DEFAULT 0,
+  user_total_likes            TEXT DEFAULT 0,
+  user_total_dislikes         TEXT DEFAULT 0,
+  user_total_followers        TEXT DEFAULT 0,
+  user_total_following        TEXT DEFAULT 0,
   PRIMARY KEY(user_id)
 ) WITHOUT ROWID;
 INSERT INTO users VALUES("ebb0d9d74d6c4825b3e1a1bcd73ff49a", "elonmusk", "Elon", "Musk", "51602a9f7d82472b90ed1091248f6cb1.jpg", "1676629975", "0", "0", "0", "0", "0", "0", "0");
@@ -20,12 +20,21 @@ INSERT INTO users VALUES("7860393a03dc4c1e872dcdd2cbf946ab", "shakira", "Shakira
 INSERT INTO users VALUES("f15e3f7afcf945e2bea6b4553f25fe75", "rihanna", "Rihanna", "", "a22da1effb3d4f03a0f77f9aa8320203.jpg", "1676630057", "0", "0", "0", "0", "0", "0", "0");
 INSERT INTO users VALUES("655079064c5f44bc9b75524121840ff1", "joebiden", "Joe", "Biden", "31edbfea1bb941be827503d8f7263e9b.jpg", "1676630128", "0", "0", "0", "0", "0", "0", "0");
 
+-- CREATE UNIQUE INDEX idx_users_username ON users(user_name);
+
+CREATE INDEX idx_users_user_first_name ON users(user_first_name);
+CREATE INDEX idx_users_user_last_name ON users(user_last_name);
+CREATE INDEX idx_users_user_avatar ON users(user_avatar);
+
+SELECT name FROM sqlite_master WHERE type = 'index';
+
+-- ##############################
 
 DROP TABLE IF EXISTS tweets;
 CREATE TABLE tweets(
   tweet_id            TEXT,
   tweet_message       TEXT,
-  tweet_image         TEXT,
+  tweet_image         TEXT ,
   tweet_created_at    TEXT,
   tweet_user_fk       TEXT,
   PRIMARY KEY(tweet_id)
@@ -40,12 +49,16 @@ INSERT INTO tweets VALUES("935382d5bb6a4a948948a8fe978684be", "How crazy both of
 INSERT INTO tweets VALUES("485db3c60952420e9c4670bb8d3c5830", "The cutest 😍", "", "1676655238", "f15e3f7afcf945e2bea6b4553f25fe75");
 INSERT INTO tweets VALUES("b1dbb467680f4b73ac144243484e1642", "The Declaration of Independence promises that we’re all created equal and entitled to a fair chance. It’s who we are as a nation. Let’s pass the Equality Act – to ensure LGBTQ+ Americans can live with safety and dignity.", "c4454014dbb1421c8f922b76cb8a44ec.jpg", "1676655298", "655079064c5f44bc9b75524121840ff1");
 INSERT INTO tweets VALUES("092484cc00e7451b9c128428a14ac0f4", "I think every kid, in every zip code, in every state should have access to every education opportunity possible. I guess, for some, that isn’t the consensus view.", "890b7ecfd33a48a38cfbba7e61137e43.jpg", "1676655332", "655079064c5f44bc9b75524121840ff1");
+CREATE INDEX idx_tweets_tweet_image ON tweets(tweet_image);
 
+
+
+-- ##############################
 DROP TABLE IF EXISTS trends;
 CREATE TABLE trends(
   trend_id            TEXT,
-  trend_title         TEXT,
-  trend_total_tweets  TEXT,
+  trend_title         TEXT NOT NULL,
+  trend_total_tweets  TEXT DEFAULT 0,
   PRIMARY KEY(trend_id)
 ) WITHOUT ROWID;
 INSERT INTO trends VALUES("882f3de5c2e5450eaf6e59c14be1db70", "Taiwan", "1524");
@@ -69,7 +82,10 @@ SELECT * FROM users_by_name LIMIT 1;
 -- The name of the view is: users_and_tweets
 SELECT * FROM users JOIN tweets ON user_id = tweet_user_fk;
 
+DROP VIEW IF EXISTS users_and_tweets;
 CREATE VIEW users_and_tweets AS 
 SELECT * FROM users JOIN tweets ON user_id = tweet_user_fk;
 
 SELECT * FROM users_and_tweets;
+
+-- Stored Procedures
