@@ -27,6 +27,7 @@ CREATE INDEX idx_users_user_last_name ON users(user_last_name);
 CREATE INDEX idx_users_user_avatar ON users(user_avatar);
 
 SELECT name FROM sqlite_master WHERE type = 'index';
+SELECT name FROM sqlite_master WHERE type = 'trigger';
 
 -- ##############################
 
@@ -88,4 +89,36 @@ SELECT * FROM users JOIN tweets ON user_id = tweet_user_fk;
 
 SELECT * FROM users_and_tweets;
 
--- Stored Procedures
+-- Triggers
+-- Increate user_total_tweets when a tweet is inserted/created
+DROP TRIGGER IF EXISTS increment_user_total_tweets;
+CREATE TRIGGER increment_user_total_tweets AFTER INSERT ON tweets
+BEGIN
+  UPDATE users 
+  SET user_total_tweets =  user_total_tweets + 1 
+  WHERE user_id = NEW.tweet_user_fk;
+END;
+
+DROP TRIGGER IF EXISTS decrement_user_total_tweets;
+CREATE TRIGGER decrement_user_total_tweets AFTER DELETE ON tweets
+BEGIN
+  UPDATE users 
+  SET user_total_tweets =  user_total_tweets - 1 
+  WHERE user_id = OLD.tweet_user_fk;
+END;
+
+SELECT user_name, user_total_tweets FROM users;
+
+INSERT INTO tweets VALUES(
+  "3ad7c99a108b4b0d91a8c2e20dfc9c9a", 
+  "Hi", 
+  "",
+  "1677162587",
+  "ebb0d9d74d6c4825b3e1a1bcd73ff49a"
+);
+
+DELETE FROM tweets WHERE tweet_id = "3ad7c99a108b4b0d91a8c2e20dfc9c9a";
+
+
+
+
