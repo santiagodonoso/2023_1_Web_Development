@@ -8,9 +8,19 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-02-27T08:00:29.361Z",
-    "modified": "2023-02-27T08:00:29.361Z",
+    "modified": "2023-02-27T08:26:45.431Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "message",
+          "value": "1"
+        }
+      ]
+    },
     "tests": []
   }
 ]
