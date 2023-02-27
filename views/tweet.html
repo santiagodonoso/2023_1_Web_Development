@@ -41,7 +41,10 @@
       const message = frm.querySelector("input[name='message']").value
       console.log(message)
       document.querySelector("#tweets").insertAdjacentHTML("afterbegin", 
-      ``)
+      `<div class="tweet">
+          <div>4</div>
+          <div>${message}</div>
+        </div>`)
     }
   </script>
 
