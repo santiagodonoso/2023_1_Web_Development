@@ -1,4 +1,4 @@
-from bottle import default_app, get, template, run, view
+from bottle import default_app, get, template, run, view, static_file
 import os
 import sqlite3
 import pathlib
@@ -9,7 +9,10 @@ print("#"*30)
 print("directory of the script being run")
 print(pathlib.Path(__file__).parent.resolve()) # /home/USERNAME/mysite
 
-
+##############################
+@get("/js/<filename>")
+def _(filename):
+  return static_file(filename, "js")
 
 
 ##############################

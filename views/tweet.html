@@ -7,13 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <form method="POST" onsubmit="tweet(); return false">
-    <input name="message" type="text">
+  <form method="POST" onsubmit="validate(tweet); return false">
+    <input name="message" type="text"
+    data-validate="str" data-min="2" data-max="5">
     <button>
       Tweet
     </button>
   </form>
 
+
+  <script src="/js/validate.js"></script>
 
   <script>
     async function tweet(){
