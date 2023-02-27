@@ -17,6 +17,15 @@
     </button>
   </form>
 
+  <section id="tweets">
+    % for tweet in tweets:
+    <div class="tweet">
+      <div>{{tweet["tweet_id"]}}</div>
+      <div>{{tweet["tweet_message"]}}</div>
+    </div>
+    % end
+  </section>
+
 
   <script src="/js/validate.js"></script>
 
@@ -29,6 +38,10 @@
       })
       const data = await conn.text()
       console.log(data)
+      const message = frm.querySelector("input[name='message']").value
+      console.log(message)
+      document.querySelector("#tweets").insertAdjacentHTML("afterbegin", 
+      ``)
     }
   </script>
 

@@ -18,11 +18,7 @@ def db():
   finally:
     pass
 
-
-
-
-
-
+##############################
 TWEET_MIN_LEN = 2
 TWEET_MAX_LEN = 5
 
