@@ -7,9 +7,11 @@
   <title>Document</title>
 </head>
 <body>
+
+
   <form method="POST" onsubmit="validate(tweet); return false">
     <input name="message" type="text"
-    data-validate="str" data-min="2" data-max="5">
+    data-validate="str" data-min="{{tweet_min_len}}" data-max="{{tweet_max_len}}">
     <button>
       Tweet
     </button>
