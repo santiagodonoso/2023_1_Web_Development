@@ -15,6 +15,7 @@ def _():
     tweet_user_fk = "ebb0d9d74d6c4825b3e1a1bcd73ff49a"
     db.execute("INSERT INTO tweets VALUES(?, ?, ?, ?, ?)", 
                (tweet_id, tweet_message, tweet_image, tweet_created_at, tweet_user_fk))
+    db.commit()
     return "ok"
   except Exception as ex: # SOMETHING IS WRONG
     response.status = 400
