@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "_id": "87c67e28-c748-4fbb-9123-98f2905e7d1f",
+    "colId": "history",
+    "containerId": "",
+    "name": "127.0.0.1/tweet",
+    "url": "127.0.0.1/tweet",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-27T08:00:29.361Z",
+    "modified": "2023-02-27T08:00:29.361Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

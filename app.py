@@ -7,11 +7,6 @@ print("directory of the script being run")
 print(pathlib.Path(__file__).parent.resolve()) # /home/USERNAME/mysite
 
 
-
-
-
-
-
 ##############################
 def dict_factory(cursor, row):
   col_names = [col[0] for col in cursor.description]
@@ -49,6 +44,12 @@ def _(username):
   finally:
     if "db" in locals(): db.close()
 
+##############################
+# APIS
+import apis.api_tweet
+
+
+
 
 ##############################
 ##############################
@@ -60,5 +61,5 @@ try:
 # Run in local computer
 except Exception as ex:
   print("Server running locally")
-  run(host="127.0.0.1", port=80, debug=True, reloader=True)
+  run(host="127.0.0.1", port=80, debug=True, reloader=True) # 1024 - 65535
 
