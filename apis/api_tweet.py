@@ -21,5 +21,5 @@ def _():
     response.status = 400
     return str(ex)
   finally: # This will always take place
-    pass
+    if "db" in locals(): db.close()
 

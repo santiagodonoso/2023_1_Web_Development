@@ -2,9 +2,14 @@ from bottle import default_app, get, template, run, view
 import os
 import sqlite3
 import pathlib
+import uuid
+
+
 print("#"*30)
 print("directory of the script being run")
 print(pathlib.Path(__file__).parent.resolve()) # /home/USERNAME/mysite
+
+
 
 
 ##############################
@@ -43,6 +48,10 @@ def _(username):
     return "error"
   finally:
     if "db" in locals(): db.close()
+
+##############################
+# VIEWS
+import views.tweet
 
 ##############################
 # APIS
