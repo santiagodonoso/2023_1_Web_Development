@@ -17,10 +17,10 @@ def _():
     db.execute("INSERT INTO tweets VALUES(?, ?, ?, ?, ?)", 
                (tweet_id, tweet_message, tweet_image, tweet_created_at, tweet_user_fk))
     db.commit()
-    return "ok"
+    return {"info":"ok", "tweet_id":tweet_id}
   except Exception as ex: # SOMETHING IS WRONG
     response.status = 400
-    return str(ex)
+    return {"info":str(ex)}
   finally: # This will always take place
     if "db" in locals(): db.close()
 
