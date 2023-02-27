@@ -57,7 +57,7 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-02-27T12:49:36.873Z",
-    "modified": "2023-02-27T12:50:52.574Z",
+    "modified": "2023-02-27T12:52:56.007Z",
     "headers": [],
     "params": [],
     "body": {
@@ -74,6 +74,31 @@
         }
       ]
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "contains",
+        "value": "info"
+      },
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "equal",
+        "value": "application/json"
+      }
+    ]
   }
 ]
