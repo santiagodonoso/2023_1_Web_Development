@@ -7,8 +7,13 @@ def _():
 ##############################
 @get("/admin")
 def _():
+
+    response.add_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+    response.add_header("Pragma", "no-cache")
+    response.add_header("Expires", 0)
+
     user = request.get_cookie("user", secret="my-secret")
-    # if user is None:
+    # if not user:
     if user is None:
         response.status=303
         response.set_header("Location", "/login")
@@ -19,9 +24,6 @@ def _():
 ##############################
 @get("/logout")
 def _():
-    response.add_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
-    response.add_header("Pragma", "no-cache")
-    response.add_header("Expires", 0)
     response.set_cookie("user", "", expires=0)
     response.status = 303
     response.set_header("Location", "/login")
