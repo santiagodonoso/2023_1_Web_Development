@@ -19,6 +19,6 @@ def _():
     cookie_expiration_date = int(time.time()) + 7200
     response.set_cookie("user", user, secret="my-secret", httponly=True)
     response.status = 303
-    response.set_header("Location", "/admin")
+    response.set_header("Location", "/profile")
     return
 

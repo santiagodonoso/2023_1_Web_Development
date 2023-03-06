@@ -5,7 +5,7 @@ def _():
     return template("login")
 
 ##############################
-@get("/admin")
+@get("/profile")
 def _():
 
     response.add_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
@@ -14,12 +14,11 @@ def _():
 
     user = request.get_cookie("user", secret="my-secret")
     # if not user:
-    if user is None:
-        response.status=303
-        response.set_header("Location", "/login")
-        return
-    user_name = "MY USER NAME HERE"
-    return template("admin", user=user)
+    # if user is None:
+    #     response.status=303
+    #     response.set_header("Location", "/login")
+    #     return
+    return template("profile", user=user)
 
 ##############################
 @get("/logout")
