@@ -1,4 +1,5 @@
 from bottle import post, response
+import time 
 
 @post("/login")
 def _():
@@ -12,7 +13,11 @@ def _():
         "user_first_name":"Santiago",
         "user_last_name":"Donoso"
     }
-    response.set_cookie("user", user, secret="my-secret")
+    # 1678060800
+
+
+    cookie_expiration_date = int(time.time()) + 7200
+    response.set_cookie("user", user, secret="my-secret", httponly=True)
     response.status = 303
     response.set_header("Location", "/admin")
     return

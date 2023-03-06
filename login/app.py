@@ -1,4 +1,4 @@
-from bottle import get, request, run, template
+from bottle import get, request, response, run, template
 
 @get("/login")
 def _():
@@ -8,8 +8,25 @@ def _():
 @get("/admin")
 def _():
     user = request.get_cookie("user", secret="my-secret")
+    # if user is None:
+    if user is None:
+        response.status=303
+        response.set_header("Location", "/login")
+        return
     user_name = "MY USER NAME HERE"
     return template("admin", user=user)
+
+##############################
+@get("/logout")
+def _():
+    response.add_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+    response.add_header("Pragma", "no-cache")
+    response.add_header("Expires", 0)
+    response.set_cookie("user", "", expires=0)
+    response.status = 303
+    response.set_header("Location", "/login")
+    return
+
 
 ##############################
 import bridges.login
