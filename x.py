@@ -34,7 +34,7 @@ def validate_tweet():
 
 USER_NAME_MIN = 4
 USER_NAME_MAX = 15
-USER_NAME_REGEX = "^[a-z0-9]*$"
+USER_NAME_REGEX = "^[a-zA-Z0-9_]*$"
 # english letters only and numbers from 0 to 9
 
 def validate_user_name():
