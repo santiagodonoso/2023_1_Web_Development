@@ -75,5 +75,29 @@
       ]
     },
     "tests": []
+  },
+  {
+    "_id": "3cad862d-c9d9-431f-8e8e-f86d7bac8cdf",
+    "colId": "e6082895-d880-4808-9177-5ae07c066f12",
+    "containerId": "",
+    "name": "api sign up",
+    "url": "127.0.0.1/api-sign-up",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-03-13T08:00:35.147Z",
+    "modified": "2023-03-13T08:58:42.011Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "user_name",
+          "value": "abcf1rt"
+        }
+      ]
+    },
+    "tests": []
   }
 ]
