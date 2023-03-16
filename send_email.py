@@ -2,9 +2,9 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-sender_email = "YOUR CREATED GMAIL ACCOUNT"
-receiver_email = "SEND TO THIS EMAIL ACCOUNT"
-password = "THE SECRET CODE YOU COPIED FROM GOOGLE ACCOUNT"
+sender_email = "fulldemomail@gmail.com"
+receiver_email = "fulldemomail@gmail.com"
+password = "xisuylihdhxcqsgs"
 
 message = MIMEMultipart("alternative")
 message["Subject"] = "multipart test"
@@ -20,7 +20,7 @@ html = """\
 <html>
   <body>
     <p>Hi,<br>
-       How are you?<br>
+       Thank you for signing up<br>
        <a href="https://www.your_website_here.com">YOUR WEBSITE HERE</a>
     </p>
   </body>
