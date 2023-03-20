@@ -1,8 +1,42 @@
-from bottle import default_app, get, template, run, view, static_file
-import os
+from bottle import default_app, get, post, template, response, request, run, view, static_file
 import sqlite3
 import pathlib
 import uuid
+import os
+
+
+@post("/upload-picture")
+def _():
+	try:
+		the_picture = request.files.get("picture")
+		_, ext = os.path.splitext(the_picture.filename)
+		# print("#"*30)
+		# print(name) # happy
+		# print(ext) # .png
+
+		# how to you check the mime type
+
+		if ext not in (".png", ".jpg", ".jpeg"):
+			response.status = 400
+			return "Picture not allowed"
+		picture_name = str(uuid.uuid4().hex) # 4565
+		picture_name = picture_name + ext # 4665.png
+		the_picture.save(f"pictures/{picture_name}")
+
+		# read the mimetype
+		# if it is not one that is allowed
+		# delete the picture
+		# tell the user to stop being funny
+		# if it the real think
+		# respond with ok
+
+		return "picture uploaded"
+	except Exception as e:
+		print(e)
+	finally:
+		pass
+
+
 
 
 print("#"*30)

@@ -99,5 +99,30 @@
       ]
     },
     "tests": []
+  },
+  {
+    "_id": "8b3ffe58-0c65-4e32-b528-fc96242a46e0",
+    "colId": "e6082895-d880-4808-9177-5ae07c066f12",
+    "containerId": "",
+    "name": "upload picture",
+    "url": "127.0.0.1/upload-picture",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2023-03-20T07:43:37.922Z",
+    "modified": "2023-03-20T08:20:48.640Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [],
+      "files": [
+        {
+          "name": "picture",
+          "value": "..\\..\\Users\\SAND\\Desktop\\sad.png"
+        }
+      ]
+    },
+    "tests": []
   }
 ]
