@@ -3,7 +3,8 @@ import sqlite3
 import pathlib
 import uuid
 import os
-
+import magic
+import mimetypes
 
 @post("/upload-picture")
 def _():
@@ -22,6 +23,21 @@ def _():
 		picture_name = str(uuid.uuid4().hex) # 4565
 		picture_name = picture_name + ext # 4665.png
 		the_picture.save(f"pictures/{picture_name}")
+
+		# mime = magic.Magic(mime=True)
+		# the_mime = mime.from_file(f"pictures/{picture_name}") # 'application/pdf'
+		# print("#"*30)
+		# print(the_mime)
+
+		mime_type = mimetypes.guess_type(f"pictures/{picture_name}", strict=True)
+		print("#"*30)
+		print(mime_type[0]) # 'image/png' even it is a ".txt"
+		# mime_type = mimetypes.guess_all_extensions(f"pictures/{picture_name}", strict=True)
+		# print(mime_type) # 'image/png' even it is a ".txt"
+
+		# if extension != imghdr.what(f"images/{id}.{extension}"):
+		#   print("removing file")
+		#   os.remove(f"images/{id}.{extension}")
 
 		# read the mimetype
 		# if it is not one that is allowed
