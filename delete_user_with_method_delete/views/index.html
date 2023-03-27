@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<main>
+		<section id="users">
+			% for user in users:
+			<form id="{{ user["user_id"] }}" class="user">
+				<div>{{ user["user_id"] }}</div>
+				<div>{{ user["user_name"] }}</div>				
+				<button type="button" onclick="delete_user()">
+					🗑️
+				</button>
+			</form>
+			% end
+		</section>
+	</main>
+
+	<script>
+		async function delete_user(){
+			console.log(event.target.form.id)
+			const user_id = event.target.form.id
+			const conn = await fetch(`user/${user_id}`, {
+				method : "DELETE"
+			})
+			const data = await conn.text()
+			console.log(data)
+		}
+	</script>
+
+
+</body>
+</html>

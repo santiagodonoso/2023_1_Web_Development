@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "a3ede211-bcf2-4910-867f-ec89369f42f7",
+    "colId": "aa6301c2-a300-484b-b26b-22e722dc5b43",
+    "containerId": "",
+    "name": "delete user",
+    "url": "127.0.0.1/user/123332222",
+    "method": "DELETE",
+    "sortNum": 10000,
+    "created": "2023-03-27T09:09:00.182Z",
+    "modified": "2023-03-27T10:26:34.552Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
