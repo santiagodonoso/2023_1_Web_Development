@@ -10,14 +10,15 @@ def dict_factory(cursor, row):
 
 ##############################
 def db():
-  try:
-    db = sqlite3.connect(str(pathlib.Path(__file__).parent.resolve())+"/twitter.db") 
-    db.row_factory = dict_factory
-    return db
-  except Exception as ex:
-    print(ex)
-  finally:
-    pass
+	try:
+		db = sqlite3.connect(str(pathlib.Path(__file__).parent.resolve())+"/twitter.db") 
+		db.execute("PRAGMA foreign_keys=ON")
+		db.row_factory = dict_factory
+		return db
+	except Exception as ex:
+		print(ex)
+	finally:
+		pass
 
 ##############################
 TWEET_MIN_LEN = 2

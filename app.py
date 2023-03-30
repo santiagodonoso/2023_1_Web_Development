@@ -3,8 +3,13 @@ import sqlite3
 import pathlib
 import uuid
 import os
-import magic
 import mimetypes
+
+
+@get("/timeout")
+def _():
+	return template("timeout")
+
 
 @post("/upload-picture")
 def _():
@@ -110,7 +115,7 @@ import views.tweet
 # APIS
 import apis.api_tweet
 import apis.api_sign_up
-
+import apis.api_get_latest_tweets
 
 
 

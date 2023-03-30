@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// setTimeout(function(){ alert() }, 1000)
+		// setTimeout(()=>{alert()}, 1000)
+		// setTimeout(show_subscribe, 10000)
+		// function show_subscribe(){
+		// 	alert()
+		// }
+
+		let tweet_id = 1
+
+		setInterval( get_latest_tweets, 1000 );
+
+		async function get_latest_tweets(){
+			const conn = await fetch("api-get-latest-tweets", {
+				method : "POST"
+			})
+			const data = await conn.text()
+			console.log(data)
+		}
+
+	</script>
+
+
+</body>
+</html>
