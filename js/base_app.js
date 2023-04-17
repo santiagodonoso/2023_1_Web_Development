@@ -181,7 +181,15 @@ function search(){
 			method : "POST"
 		})
 		const data = await conn.json()
-		console.log(data)
+		// console.log(data)
+		// loop and show the names in the div
+		let results = ""
+		document.querySelector("#search_results").innerHTML = ""
+		data.forEach( ( item )=>{			
+			results += `<div>${item.name}</div>`
+		} )
+		console.log(results)
+		document.querySelector("#search_results").insertAdjacentHTML('afterbegin', results)
 	}, 500 );
 }
 
