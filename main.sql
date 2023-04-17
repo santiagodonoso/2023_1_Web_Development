@@ -3,6 +3,7 @@ PRAGMA foreign_keys;
 PRAGMA foreign_keys = ON;
 PRAGMA foreign_keys;
 
+SELECT MIN(user_total_tweets) FROM users;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(
